@@ -1,0 +1,42 @@
+/* line 78, ../sass/screen.scss */
+#users-list {
+  width: 1200px;
+}
+/* line 80, ../sass/screen.scss */
+#users-list ul {
+  list-style-type: none;
+}
+/* line 82, ../sass/screen.scss */
+#users-list ul li {
+  float: left;
+  width: 350px;
+  height: 480px;
+  margin: 10px 20px 10px 0;
+}
+/* line 87, ../sass/screen.scss */
+#users-list ul li:nth-child(3n) {
+  margin-right: 0;
+}
+
+/* line 106, ../sass/screen.scss */
+.cf:before,
+.cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+/* line 111, ../sass/screen.scss */
+.cf:after {
+  clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+/* line 119, ../sass/screen.scss */
+.cf {
+  *zoom: 1;
+}

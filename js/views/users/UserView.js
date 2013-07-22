@@ -14,17 +14,22 @@ define([
 				this.instagramCollection = new InstagramCollection();
 			},
 			render: function(){
-				this.loadResults();
+				var that = this;
+				this.loadResults()				
 				//var compiledTemplate = _.template(userTemplate, data);
 				//this.$el.html(compiledTemplate);
 			},
 			loadResults: function(){
 				var that = this;
 				this.isLoading = true;
+				if (this.isLoading == true) {
+					$(that.el).append('<h4 class="loading">Loading</h4>')
+				}
 				this.instagramCollection.fetch({
 					success: function(photos) {
 						console.log(photos.models)
-						$(that.el).append(_.template(userTemplate, {photos: photos.models, _:_}))
+						$(that.el).html(_.template(userTemplate, {photos: photos.models, _:_}))
+						console.log(that.isLoading);
 					}
 				});
 			}
