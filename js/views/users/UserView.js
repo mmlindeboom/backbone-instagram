@@ -23,8 +23,8 @@ define([
 				this.isLoading = true;
 				this.instagramCollection.fetch({
 					success: function(photos) {
-						console.log(photos.models)
-						$(that.el).append(_.template(userTemplate, {photos: photos.models, _:_}))
+						console.log(photos);
+						$(that.el).append(_.template(userTemplate, {photos: photos.models}))
 					}
 				});
 			}

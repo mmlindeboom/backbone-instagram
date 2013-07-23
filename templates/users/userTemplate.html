@@ -12,7 +12,7 @@
 	<div id="users-list">
 		<ul>
 			<% _.each(photos, function(photo) {  %>
-				<li><%= console.log(photo.attributes.user.username) %></li>
+				<li><%= photo.attributes.user.username %><img src="<%= photo.attributes.images.standard_resolution.url %>"></li>
 			<% }); %>
 		</ul>
 	</div>

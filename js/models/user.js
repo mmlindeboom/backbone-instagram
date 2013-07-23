@@ -4,10 +4,13 @@ define([
 	'underscore',
 	'backbone'
 	], function(_, Backbone){
-		var UserModel = Backbone.Model.extend({
+		var InstagramBlock = Backbone.Model.extend({
 			defaults: {
-				name: "Harry Potter"
+				name: 'undefined',
+				imageUrl: 'undefined',
+				width: '612',
+				height: '612'
 			}
 		});
-		return UserModel;
+		return InstagramBlock;
 	});
