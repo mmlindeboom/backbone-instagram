@@ -1,18 +1,37 @@
-//Filename: views/projects/ProjectView.js
+//Filename: views/users/UserView.js
 
 define([
 	'jquery',
 	'underscore',
 	'backbone',
-	'text!templates/projects/ProjectTemplate.html'
-	], function($, _, Backbone, projectTemplate){
-		var ProjectView = Backbone.View.extend({
+	'collections/instagram',
+	'text!templates/projects/projectTemplate.html'
+	], function($, _, Backbone, InstagramCollection, videoTemplate){
+		var  VideoView = Backbone.View.extend({
 			el: $('.content'),
+			initialize: function() {
+				this.isLoading = false;
+				this.instagramCollection = new InstagramCollection();
+			},
 			render: function(){
-				var data = {};
-				//var compiledTemplate = _.template( projectListTemplate, data);
-				this.$el.html('<h1>Projects View</h1>');
+				var that = this;
+				this.loadResults()
+				//var compiledTemplate = _.template(userTemplate, data);
+				//this.$el.html(compiledTemplate);
+			},
+			loadResults: function(){
+				var that = this;
+				this.isLoading = true;
+				if (this.isLoading == true) {
+					$(that.el).append('<h4 class="loading">Loading</h4>');
+				}
+				this.instagramCollection.fetch({
+					success: function(videos) {
+						console.log(videos.models);
+						$(that.el).html(_.template(videoTemplate, {videos: videos.models, _:_}));
+					}
+				});
 			}
 		});
-		return ProjectView;
+		return VideoView;
 	});

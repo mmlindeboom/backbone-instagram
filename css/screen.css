@@ -1,24 +1,39 @@
 /* line 78, ../sass/screen.scss */
-#users-list {
+#video-list {
   width: 1200px;
 }
 /* line 80, ../sass/screen.scss */
-#users-list ul {
+#video-list ul {
+  list-style-type: none;
+  width: 100%;
+}
+/* line 83, ../sass/screen.scss */
+#video-list ul li {
+  width: 800px;
+  margin: 20px auto;
+}
+
+/* line 91, ../sass/screen.scss */
+#photo-list {
+  width: 1200px;
+}
+/* line 93, ../sass/screen.scss */
+#photo-list ul {
   list-style-type: none;
 }
-/* line 82, ../sass/screen.scss */
-#users-list ul li {
+/* line 95, ../sass/screen.scss */
+#photo-list ul li {
   float: left;
   width: 350px;
   height: 480px;
   margin: 10px 20px 10px 0;
 }
-/* line 87, ../sass/screen.scss */
-#users-list ul li:nth-child(3n) {
+/* line 100, ../sass/screen.scss */
+#photo-list ul li:nth-child(3n) {
   margin-right: 0;
 }
 
-/* line 106, ../sass/screen.scss */
+/* line 119, ../sass/screen.scss */
 .cf:before,
 .cf:after {
   content: " ";
@@ -27,7 +42,7 @@
   /* 2 */
 }
 
-/* line 111, ../sass/screen.scss */
+/* line 124, ../sass/screen.scss */
 .cf:after {
   clear: both;
 }
@@ -36,7 +51,7 @@
  * For IE 6/7 only
  * Include this rule to trigger hasLayout and contain floats.
  */
-/* line 119, ../sass/screen.scss */
+/* line 132, ../sass/screen.scss */
 .cf {
   *zoom: 1;
 }
