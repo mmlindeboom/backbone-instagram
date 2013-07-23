@@ -1,5 +1,5 @@
-<div class="main">	
-	<h2>Instagram Most Popular</h2>
+<div class="main">
+	<button id="refreshVid">Refresh</button>
 	<div id="video-list">
 		<ul class="cf">
 			<% _.each(videos, function(video) {  %>
@@ -9,10 +9,10 @@
 					<h4><%= video.get('user')['username']%></h4>
 					
 						<video controls>
-						  <source src="<%=video.get('videos')['low_resolution']['url'] %>" type="video/mp4">
+						  <source src="<%=video.get('videos')['standard_resolution']['url'] %>" type="video/mp4">
 						  Your browser does not support the <code>video</code> element.
 						</video>
-					
+					<span class="count"><span class="like">&hearts;</span> <%= video.get('likes')['count'] %></span>
 					<% if (video.get('caption')) { %>
 					<p><%= video.get('caption')['text'] %></p>
 					<% };%>

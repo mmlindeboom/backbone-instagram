@@ -18,7 +18,7 @@ define([
 				return $.ajax(params)
 			},
 			parse: function(resp, xhr) {
-					console.log(resp.data)
+					console.log('The xhr is', xhr);
 					return resp.data;
 			},
 			client_id: '8fb211e761414d1eafe6eac2b917efd6'

@@ -1,39 +1,92 @@
-/* line 78, ../sass/screen.scss */
+/* line 74, ../sass/screen.scss */
+h1, h2, h3, h4, p, a {
+  font-family: "Arvo", sans-serif;
+  color: #333333;
+}
+
+/* line 79, ../sass/screen.scss */
+a {
+  color: #ff1222;
+  text-decoration: none;
+}
+
+/* line 87, ../sass/screen.scss */
+.container {
+  margin: 30px 70px;
+}
+
+/* line 90, ../sass/screen.scss */
 #video-list {
   width: 1200px;
 }
-/* line 80, ../sass/screen.scss */
+/* line 92, ../sass/screen.scss */
 #video-list ul {
   list-style-type: none;
   width: 100%;
 }
-/* line 83, ../sass/screen.scss */
+/* line 95, ../sass/screen.scss */
 #video-list ul li {
-  width: 800px;
+  position: relative;
+  width: 640px;
   margin: 20px auto;
 }
 
-/* line 91, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 #photo-list {
   width: 1200px;
 }
-/* line 93, ../sass/screen.scss */
+/* line 106, ../sass/screen.scss */
 #photo-list ul {
   list-style-type: none;
+  margin-left: -40px;
 }
-/* line 95, ../sass/screen.scss */
+/* line 109, ../sass/screen.scss */
 #photo-list ul li {
+  position: relative;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
   float: left;
-  width: 350px;
+  width: 306px;
   height: 480px;
-  margin: 10px 20px 10px 0;
+  margin: 10px 30px 10px 0;
+  overflow: scroll;
 }
-/* line 100, ../sass/screen.scss */
+/* line 119, ../sass/screen.scss */
 #photo-list ul li:nth-child(3n) {
   margin-right: 0;
 }
+/* line 122, ../sass/screen.scss */
+#photo-list ul li:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
 
-/* line 119, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
+.count {
+  display: block;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 150px;
+  font-size: 3em;
+  font-family: "Ubuntu", sans-serif;
+  color: #fff;
+  text-shadow: 1px 3px 3px #333333;
+}
+/* line 139, ../sass/screen.scss */
+.count .like {
+  color: #ff000E;
+}
+
+/* line 154, ../sass/screen.scss */
 .cf:before,
 .cf:after {
   content: " ";
@@ -42,7 +95,7 @@
   /* 2 */
 }
 
-/* line 124, ../sass/screen.scss */
+/* line 159, ../sass/screen.scss */
 .cf:after {
   clear: both;
 }
@@ -51,7 +104,7 @@
  * For IE 6/7 only
  * Include this rule to trigger hasLayout and contain floats.
  */
-/* line 132, ../sass/screen.scss */
+/* line 167, ../sass/screen.scss */
 .cf {
   *zoom: 1;
 }

@@ -6,7 +6,8 @@ $font-family: sans-serif !default;
 $font-size: 1em !default;
 $selected-font-color: #fff !default;
 $selected-background-color: #b3d4fc !default;
-
+$font: 'Ubuntu', sans-serif !default;
+$count: 'Arvo', sans-serif !default;
 @mixin h5bp-main {
   @include h5bp-base-styles;
   @include h5bp-chromeframe;
@@ -70,18 +71,30 @@ $selected-background-color: #b3d4fc !default;
       resize: vertical;
   }
 }
+ h1, h2, h3, h4, p, a {
+    font-family: $count;
+    color:#333
+ }
 
+a {
+  color:#ff1222;
+  text-decoration:none;
+}
 //
 // Chrome Frame Prompt
 //
 
+.container {
+  margin:30px 70px;
+}
 #video-list {
   width:1200px;
   ul {
     list-style-type:none;
     width:100%;
     li {
-      width:800px;
+      position:relative;
+      width:640px;
       margin:20px auto;
 
     }
@@ -92,19 +105,41 @@ $selected-background-color: #b3d4fc !default;
   width: 1200px;
   ul {
     list-style-type:none;
+    margin-left:-40px;
     li {
+      position:relative;
+      @include transition-property(opacity);
+      @include transition-duration(1s);
+      @include opacity(0.4);
       float:left;
-      width:350px;
+      width:306px;
       height:480px;
-      margin:10px 20px 10px 0;
+      margin:10px 30px 10px 0;
+      overflow:scroll;
       &:nth-child(3n) {
         margin-right:0;
+      }
+      &:hover {
+        @include opacity(1);
       }
     }
   }
 }
   
-
+.count {
+        display:block;
+        width:100%;
+        text-align:center;
+        position:absolute;
+        top:150px;
+        font-size:3em;
+        font-family:$font;
+        color:#fff;
+        @include text-shadow(1px 3px 3px #333);
+        .like {
+          color:#ff000E;
+        }
+      }
 @mixin h5bp-chromeframe {
   .chromeframe {
       margin: 0.2em 0;

@@ -6,32 +6,39 @@ define([
 	'backbone',
 	'collections/instagram',
 	'text!templates/users/userTemplate.html'
-	], function($, _, Backbone, InstagramCollection, userTemplate){
+	], function($, _, Backbone, PhotosCollection, userTemplate){
 		var UserView = Backbone.View.extend({
 			el: $('.content'),
 			initialize: function() {
 				this.isLoading = false;
-				this.instagramCollection = new InstagramCollection();
+				this.photosCollection = new PhotosCollection();
+			},
+			events : {
+				'click #refresh': 'loadResults',
+				'click li' : 'showModel'
 			},
 			render: function(){
 				var that = this;
-				this.loadResults()				
-				//var compiledTemplate = _.template(userTemplate, data);
-				//this.$el.html(compiledTemplate);
+				this.loadResults();
 			},
 			loadResults: function(){
 				var that = this;
 				this.isLoading = true;
 				if (this.isLoading == true) {
-					$(that.el).append('<h4 class="loading">Loading</h4>')
+					$(that.el).html('<h4 class="loading"><img src="../img/small-loading.gif"></h4>')
 				}
-				this.instagramCollection.fetch({
+				this.photosCollection.fetch({
 					update: true,
 					success: function(photos) {
-						console.log(photos.models)
+
+						console.log('This is the photos model ', photos.models)
 						$(that.el).html(_.template(userTemplate, {photos: photos.models, _:_}))
 					}
 				});
+			},
+			showModel : function(e) {
+				var target = e.target;
+				
 			}
 		});
 		return UserView;

@@ -1,5 +1,6 @@
 <div class="main">	
-	<h2>Instagram Most Popular</h2>
+
+	<button id="refresh">Refresh</button>
 	<div id="photo-list">
 		<ul class="cf">
 			<% _.each(photos, function(photo) {  %>
@@ -8,10 +9,10 @@
 					<h4><%= photo.get('user')['username']%></h4>
 					
 						<img src="<%= photo.get('images')['low_resolution']['url'] %>">
-					<%}%>
 					<% if (photo.get('caption')) { %>
-					<p><%= photo.get('caption')['text'] %></p>
-					
+						<span class="count"><span class="like">&hearts;</span> <%= photo.get('likes')['count'] %></span>
+						<p><%= photo.get('caption')['text'] %></p>
+					<% }%>
 				</li>
 				<% };%>
 			<% }); %>
