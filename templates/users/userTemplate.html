@@ -1,18 +1,15 @@
 <div class="main">	
-	<h2>Projects</h2>
-	<p>
-		This site is by no means the definite guide to backbone.js and all corrections and contributions are welcome. About Backbone Tutorials
-	</p>
-	<p>
-		As single page apps and large scale javascript applications become more prominent on the web, useful resources for those developers who are jumping the ship are crucial
-	</p>
-	<p>
-		I started this site to not only consolidate my understanding of backbone.js but to also document what I have learned thus far for myself and others.
-	</p>
+	<h2>Instagram Most Popular</h2>
 	<div id="users-list">
-		<ul>
+		<ul class="cf">
 			<% _.each(photos, function(photo) {  %>
-				<li><%= photo.attributes.user.username %><img src="<%= photo.attributes.images.standard_resolution.url %>"></li>
+				<li>
+					<h4><%= photo.get('user')['username']%></h4>
+					<img src="<%= photo.get('images')['low_resolution']['url'] %>">
+					<% if (photo.get('caption')) { %>
+					<p><%= photo.get('caption')['text'] %></p>
+					<% };%>
+				</li>
 			<% }); %>
 		</ul>
 	</div>
