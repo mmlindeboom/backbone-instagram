@@ -26,21 +26,36 @@ a {
 }
 /* line 95, ../sass/screen.scss */
 #video-list ul li {
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
   position: relative;
   width: 640px;
   margin: 20px auto;
 }
+/* line 102, ../sass/screen.scss */
+#video-list ul li:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
 
-/* line 104, ../sass/screen.scss */
+/* line 109, ../sass/screen.scss */
 #photo-list {
   width: 1200px;
 }
-/* line 106, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 #photo-list ul {
   list-style-type: none;
   margin-left: -40px;
 }
-/* line 109, ../sass/screen.scss */
+/* line 114, ../sass/screen.scss */
 #photo-list ul li {
   position: relative;
   -webkit-transition-property: opacity;
@@ -59,17 +74,17 @@ a {
   margin: 10px 30px 10px 0;
   overflow: scroll;
 }
-/* line 119, ../sass/screen.scss */
+/* line 124, ../sass/screen.scss */
 #photo-list ul li:nth-child(3n) {
   margin-right: 0;
 }
-/* line 122, ../sass/screen.scss */
+/* line 127, ../sass/screen.scss */
 #photo-list ul li:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-/* line 129, ../sass/screen.scss */
+/* line 134, ../sass/screen.scss */
 .count {
   display: block;
   width: 100%;
@@ -81,12 +96,12 @@ a {
   color: #fff;
   text-shadow: 1px 3px 3px #333333;
 }
-/* line 139, ../sass/screen.scss */
+/* line 144, ../sass/screen.scss */
 .count .like {
   color: #ff000E;
 }
 
-/* line 154, ../sass/screen.scss */
+/* line 159, ../sass/screen.scss */
 .cf:before,
 .cf:after {
   content: " ";
@@ -95,7 +110,7 @@ a {
   /* 2 */
 }
 
-/* line 159, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 .cf:after {
   clear: both;
 }
@@ -104,7 +119,7 @@ a {
  * For IE 6/7 only
  * Include this rule to trigger hasLayout and contain floats.
  */
-/* line 167, ../sass/screen.scss */
+/* line 172, ../sass/screen.scss */
 .cf {
   *zoom: 1;
 }

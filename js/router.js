@@ -11,8 +11,8 @@ define([
 		var Router = Backbone.Router.extend({
 			routes: {
 				//Define routes
-				'projects': 'showProjects',
-				'users': 'showUsers',
+				'videos': 'showVideos',
+				'photos': 'showPhotos',
 
 				//Default 
 				'*actions': 'defaultAction'
@@ -20,17 +20,17 @@ define([
 		});
 		var initialize = function(){
 			var app_router = new Router;
-			app_router.on('route:showProjects', function(){
+			app_router.on('route:showVideos', function(){
 				var projectView = new ProjectView();
 				projectView.render();
 			});
-			app_router.on('route:showUsers', function(){
+			app_router.on('route:showPhotos', function(){
 				var userView = new UserView();
 				userView.render();
 				console.log('Users Rendered')
 			});
 			app_router.on('route:defaultAction', function(actions){
-				console.log('No route:', actions);
+				window.location.href = '#/photos'
 			});
 			Backbone.history.start();
 		};

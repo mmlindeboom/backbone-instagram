@@ -14,7 +14,9 @@ define([
 				this.instagramCollection = new InstagramCollection();
 			},
 			events : {
-				'click #refreshVid': 'loadVidResults'
+				'click #refreshVid': 'loadVidResults',
+				'hover video' : 'playVid',
+				'mouseleave video' : 'stopVid'
 			},
 			render: function(){
 				var that = this;
@@ -24,7 +26,7 @@ define([
 				var that = this;
 				this.isLoading = true;
 				if (this.isLoading == true) {
-					$(that.el).html('<h4 class="loading"><img src="../img/small-loading.gif"></h4>');
+					$(that.el).html('<h4 class="loading"><img src="img/small-loading.gif"></h4>');
 				}
 				console.log('Loading Video results');
 				this.instagramCollection.fetch({
@@ -35,6 +37,14 @@ define([
 						$(that.el).html(_.template(videoTemplate, {videos: videos.models, _:_}));
 					}
 				});
+			},
+			playVid: function(e) {
+				var target = e.target;
+				target.play();
+			},
+			stopVid: function(e) {
+				var target = e.target;
+				target.pause();
 			}
 		});
 		return VideoView;

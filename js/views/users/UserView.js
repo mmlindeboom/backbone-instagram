@@ -25,7 +25,7 @@ define([
 				var that = this;
 				this.isLoading = true;
 				if (this.isLoading == true) {
-					$(that.el).html('<h4 class="loading"><img src="../img/small-loading.gif"></h4>')
+					$(that.el).html('<h4 class="loading"><img src="img/small-loading.gif"></h4>')
 				}
 				this.photosCollection.fetch({
 					update: true,

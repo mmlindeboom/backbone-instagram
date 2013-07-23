@@ -93,10 +93,15 @@ a {
     list-style-type:none;
     width:100%;
     li {
+      @include transition-property(opacity);
+      @include transition-duration(1s);
+      @include opacity(0.4);
       position:relative;
       width:640px;
       margin:20px auto;
-
+       &:hover {
+        @include opacity(1);
+      }
     }
   } 
 }
