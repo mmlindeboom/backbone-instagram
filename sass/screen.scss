@@ -75,7 +75,20 @@ $selected-background-color: #b3d4fc !default;
 // Chrome Frame Prompt
 //
 
-#users-list {
+#video-list {
+  width:1200px;
+  ul {
+    list-style-type:none;
+    width:100%;
+    li {
+      width:800px;
+      margin:20px auto;
+
+    }
+  } 
+}
+
+#photo-list {
   width: 1200px;
   ul {
     list-style-type:none;

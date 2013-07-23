@@ -26,6 +26,7 @@ define([
 					$(that.el).append('<h4 class="loading">Loading</h4>')
 				}
 				this.instagramCollection.fetch({
+					update: true,
 					success: function(photos) {
 						console.log(photos.models)
 						$(that.el).html(_.template(userTemplate, {photos: photos.models, _:_}))
