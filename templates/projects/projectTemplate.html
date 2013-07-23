@@ -3,18 +3,21 @@
 	<div id="video-list">
 		<ul class="cf">
 			<% _.each(videos, function(video) {  %>
+			 <% if (video.get('type') === 'video') { %>
 				<li>
+					
 					<h4><%= video.get('user')['username']%></h4>
-					<% if (video.get('type') == 'video') { %>
+					
 						<video controls>
 						  <source src="<%=video.get('videos')['low_resolution']['url'] %>" type="video/mp4">
 						  Your browser does not support the <code>video</code> element.
 						</video>
-					<%}%>
+					
 					<% if (video.get('caption')) { %>
 					<p><%= video.get('caption')['text'] %></p>
 					<% };%>
 				</li>
+				<%}%>
 			<% }); %>
 		</ul>
 	</div>

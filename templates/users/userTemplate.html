@@ -3,15 +3,17 @@
 	<div id="photo-list">
 		<ul class="cf">
 			<% _.each(photos, function(photo) {  %>
+			<% if (photo.get('type') == 'image') { %>
 				<li>
 					<h4><%= photo.get('user')['username']%></h4>
-					<% if (photo.get('type') == 'image') { %>
+					
 						<img src="<%= photo.get('images')['low_resolution']['url'] %>">
 					<%}%>
 					<% if (photo.get('caption')) { %>
 					<p><%= photo.get('caption')['text'] %></p>
-					<% };%>
+					
 				</li>
+				<% };%>
 			<% }); %>
 		</ul>
 	</div>

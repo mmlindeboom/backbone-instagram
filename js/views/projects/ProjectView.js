@@ -15,7 +15,7 @@ define([
 			},
 			render: function(){
 				var that = this;
-				this.loadResults()				
+				this.loadResults()
 				//var compiledTemplate = _.template(userTemplate, data);
 				//this.$el.html(compiledTemplate);
 			},
@@ -23,13 +23,12 @@ define([
 				var that = this;
 				this.isLoading = true;
 				if (this.isLoading == true) {
-					$(that.el).append('<h4 class="loading">Loading</h4>')
+					$(that.el).append('<h4 class="loading">Loading</h4>');
 				}
 				this.instagramCollection.fetch({
-					update: true,
 					success: function(videos) {
 						console.log(videos.models);
-						$(that.el).html(_.template(videoTemplate, {photos: videos.models, _:_}));
+						$(that.el).html(_.template(videoTemplate, {videos: videos.models, _:_}));
 					}
 				});
 			}
