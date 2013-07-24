@@ -3,20 +3,16 @@
 	<div id="video-list">
 		<ul class="cf">
 			<% _.each(videos, function(video) {  %>
-			 <% if (video.get('type') === 'video') { %>
-				<li>
-					
-					<h4><%= video.get('user')['username']%></h4>
-					
-						<video controls>
-						  <source src="<%=video.get('videos')['standard_resolution']['url'] %>" type="video/mp4">
-						  Your browser does not support the <code>video</code> element.
-						</video>
-					<span class="count"><span class="like">&hearts;</span> <%= video.get('likes')['count'] %></span>
-					<% if (video.get('caption')) { %>
-					<p><%= video.get('caption')['text'] %></p>
-					<% };%>
-				</li>
+				<% if (video.get('type') === 'video') { %>
+					<li>
+						<h4><%= video.get('user')['username']%></h4>
+						<p><%= country %></p>
+							<video controls>
+							  <source src="<%=video.get('videos')['standard_resolution']['url'] %>" type="video/mp4">
+							  Your browser does not support the <code>video</code> element.
+							</video>
+						<span class="count"><span class="like">&hearts;</span> <%= video.get('likes')['count'] %></span>
+					</li>
 				<%}%>
 			<% }); %>
 		</ul>

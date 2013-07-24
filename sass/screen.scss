@@ -110,6 +110,8 @@ a {
       position:relative;
       width:640px;
       margin:20px auto;
+      padding-bottom:30px;
+      border-bottom:1px solid #666;
       video {
         @include border-radius(5px);
       }
@@ -134,7 +136,7 @@ a {
       width:306px;
       height:480px;
       margin:10px 30px 10px 0;
-      overflow:scroll;
+      overflow:hidden;
       &:nth-child(3n) {
         margin-right:0;
       }

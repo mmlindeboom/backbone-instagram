@@ -68,8 +68,10 @@ a {
   position: relative;
   width: 640px;
   margin: 20px auto;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #666;
 }
-/* line 113, ../sass/screen.scss */
+/* line 115, ../sass/screen.scss */
 #video-list ul li video {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -77,22 +79,22 @@ a {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 116, ../sass/screen.scss */
+/* line 118, ../sass/screen.scss */
 #video-list ul li:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-/* line 123, ../sass/screen.scss */
+/* line 125, ../sass/screen.scss */
 #photo-list {
   width: 1200px;
 }
-/* line 125, ../sass/screen.scss */
+/* line 127, ../sass/screen.scss */
 #photo-list ul {
   list-style-type: none;
   margin-left: -40px;
 }
-/* line 128, ../sass/screen.scss */
+/* line 130, ../sass/screen.scss */
 #photo-list ul li {
   position: relative;
   -webkit-transition-property: opacity;
@@ -109,19 +111,19 @@ a {
   width: 306px;
   height: 480px;
   margin: 10px 30px 10px 0;
-  overflow: scroll;
+  overflow: hidden;
 }
-/* line 138, ../sass/screen.scss */
+/* line 140, ../sass/screen.scss */
 #photo-list ul li:nth-child(3n) {
   margin-right: 0;
 }
-/* line 141, ../sass/screen.scss */
+/* line 143, ../sass/screen.scss */
 #photo-list ul li:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-/* line 148, ../sass/screen.scss */
+/* line 150, ../sass/screen.scss */
 .count {
   display: block;
   width: 100%;
@@ -154,11 +156,11 @@ a {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 163, ../sass/screen.scss */
+/* line 165, ../sass/screen.scss */
 .count .like {
   color: #ff000E;
 }
-/* line 166, ../sass/screen.scss */
+/* line 168, ../sass/screen.scss */
 .count.active {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
@@ -178,7 +180,7 @@ a {
   transition-duration: 0.3s;
 }
 
-/* line 184, ../sass/screen.scss */
+/* line 186, ../sass/screen.scss */
 .cf:before,
 .cf:after {
   content: " ";
@@ -187,7 +189,7 @@ a {
   /* 2 */
 }
 
-/* line 189, ../sass/screen.scss */
+/* line 191, ../sass/screen.scss */
 .cf:after {
   clear: both;
 }
@@ -196,7 +198,7 @@ a {
  * For IE 6/7 only
  * Include this rule to trigger hasLayout and contain floats.
  */
-/* line 197, ../sass/screen.scss */
+/* line 199, ../sass/screen.scss */
 .cf {
   *zoom: 1;
 }
