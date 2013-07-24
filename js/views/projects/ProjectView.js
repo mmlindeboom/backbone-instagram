@@ -36,18 +36,14 @@ define([
 						console.log('This is the videos object ',  videos.models);
 						self = self || {};
 						var location = [];
-						var countries = [];
-						self.display = function(arr) {
-							countries.location = arr;
-							return countries
-						}
+				
 						for (var i = 0; i<videos.models.length; i++) {
 							var count = i
 							location.push({attributes: videos.models[i]['attributes'].location})
 							if (location[i].attributes != null ) {
 								lat = location[i].attributes.latitude;
 								lng = location[i].attributes.longitude;
-								that.locations.set({lat:lat, lng:lng, results: that.locations.parse()});
+								that.locations.set({lat:lat, lng:lng, type: videos.models[i]['attributes'].type});
 								if (that.locations.lat != 'undefined'){
 									that.locations.fetch({
 										success : function(loc) {
@@ -55,30 +51,8 @@ define([
 										}
 									});
 								}
-								
-								//that.locations.set({lat:lat, lng:lng})
-								// $.ajax({
-								// 	url: '',
-								// 	method: 'GET',
-								// 	dataType: 'JSON',
-								// 	success: function(data) {
-								// 		for (var j = 0; j < data.results.length; j++) {
-								// 			var address = data.results[j].address_components;
-								// 			for (var k = 0; k < address.length; k++) {
-								// 					var boundry = address[k]['types'][0];
-								// 					var country = address[k]['long_name'];
-								// 					if (boundry === 'country') {
-								// 						countries.push({location:country})
-								// 					}
-								// 			}
-								// 		}
-								// 	}
-								// })
 							}
 						} 
-						if (countries.length != 0) {
-							console.log(countries);
-						}
 						$(that.el).html(_.template(videoTemplate, {videos: videos.models, _:_ , country: 'hullo'}));
 					}
 				});
