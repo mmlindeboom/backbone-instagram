@@ -80,10 +80,21 @@ a {
   color:#ff1222;
   text-decoration:none;
 }
-//
-// Chrome Frame Prompt
-//
-
+#refresh, #refreshVid {
+  border:0;
+  padding:10px 20px;
+  @include border-radius(5px);
+  @include background-image(linear-gradient(#ff0000, #ba0000));
+  color:#fff;
+  border:1px solid #fff;
+  &:hover {
+    border:1px solid #ba0000;
+  }
+  &:active {
+    background:#ba0000;
+    @include box-shadow(1px 1px 1px #880000 inset)
+  }
+}
 .container {
   margin:30px 70px;
 }
@@ -99,6 +110,9 @@ a {
       position:relative;
       width:640px;
       margin:20px auto;
+      video {
+        @include border-radius(5px);
+      }
        &:hover {
         @include opacity(1);
       }
@@ -141,8 +155,19 @@ a {
         font-family:$font;
         color:#fff;
         @include text-shadow(1px 3px 3px #333);
+        @include transform-style(preserve-3d);
+        @include rotateX(-60deg);
+        @include transform-origin(50%, 0);
+        @include opacity(0);
+        @include transition-duration(0.3s);
         .like {
           color:#ff000E;
+        }
+        &.active {
+         @include transform-style(preserve-3d);
+         @include rotateX(0deg);
+         @include opacity(1);
+         @include transition-duration(0.3s);
         }
       }
 @mixin h5bp-chromeframe {

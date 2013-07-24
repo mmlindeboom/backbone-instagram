@@ -32,18 +32,19 @@ define([
 				this.instagramCollection.fetch({
 					success: function(videos) {
 						console.log('This is the videos object ',  videos.models.length);
-
-
 						$(that.el).html(_.template(videoTemplate, {videos: videos.models, _:_}));
 					}
 				});
 			},
 			playVid: function(e) {
 				var target = e.target;
+				$target = $(e.target);
+				$(target).parent().find('.count').addClass('active');
 				target.play();
 			},
 			stopVid: function(e) {
 				var target = e.target;
+				$(target).parent().find('.count').removeClass('active');
 				target.pause();
 			}
 		});

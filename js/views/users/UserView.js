@@ -15,7 +15,8 @@ define([
 			},
 			events : {
 				'click #refresh': 'loadResults',
-				'click li' : 'showModel'
+				'hover li img' : 'showModel',
+				'mouseleave li img': 'hideModel'
 			},
 			render: function(){
 				var that = this;
@@ -37,8 +38,14 @@ define([
 				});
 			},
 			showModel : function(e) {
-				var target = e.target;
+				$target = $(e.target);
+				console.log($target);
+				$target.parent().find('.count').addClass('active');
 				
+			},
+			hideModel : function(e) {
+				$target = $(e.target);
+				$target.parent().find('.count').removeClass('active');
 			}
 		});
 		return UserView;
