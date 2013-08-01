@@ -34,25 +34,6 @@ define([
 				this.instagramCollection.fetch({
 					success: function(videos) {
 						console.log('This is the videos object ',  videos.models);
-						self = self || {};
-						var location = [];
-				
-						for (var i = 0; i<videos.models.length; i++) {
-							var count = i
-							location.push({attributes: videos.models[i]['attributes'].location})
-							if (location[i].attributes != null ) {
-								lat = location[i].attributes.latitude;
-								lng = location[i].attributes.longitude;
-								that.locations.set({lat:lat, lng:lng, type: videos.models[i]['attributes'].type});
-								if (that.locations.lat != 'undefined'){
-									that.locations.fetch({
-										success : function(loc) {
-											console.log(loc);
-										}
-									});
-								}
-							}
-						} 
 						$(that.el).html(_.template(videoTemplate, {videos: videos.models, _:_ , country: 'hullo'}));
 					}
 				});
